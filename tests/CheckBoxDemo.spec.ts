@@ -9,8 +9,11 @@ test('SingleCheckBoxTest', async({page})=>{
     await page.getByLabel('Click on check box').check();
     await page.waitForTimeout(2000);
     await expect(page.getByText('Checked!')).toBeVisible();
+    
     //Uncheck single checkbox
-    await page.getByLabel('Click on check box').uncheck();
+    if((await page.getByLabel('Click on check box').isChecked())){
+        await page.getByLabel('Click on check box').uncheck();
+    }
     await expect(page.getByText('Checked!')).toBeHidden();
     
     

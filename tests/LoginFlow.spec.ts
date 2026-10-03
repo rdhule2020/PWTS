@@ -10,7 +10,7 @@ test('Logintest' , async({page})=>{
     await page.getByRole('button',{name:'Submit'}).click();
     
     //Validate succesfull login
-    await expect(page).toHaveTitle('Logged In Successfully | Practice Test Automation');
+    await expect(page).toHaveTitle('Logged In Successfully | Practice Test Automation1');
     await expect(page).toHaveURL('https://practicetestautomation.com/logged-in-successfully/');
 
     //Log out Step validation
